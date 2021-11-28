@@ -6,7 +6,7 @@ public class Lesson2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		exercise3();
+		exercise4();
 
 	}
 	static void exercise1() {	
@@ -53,7 +53,31 @@ public class Lesson2 {
 		sc.close();
 	}
 	static void exercise4() {
+		//calcula o valor do salario do trabalhador e imprime o numero funcionario e o salario com base no valor à hora.
+		Scanner sc = new Scanner(System.in);
 		
+		
+		System.out.println("Numero Fncionário:");
+		int numeroFuncionario = sc.nextInt();
+		System.out.println("Numero Horas Trabalhadas:");
+		int numeroHoras = sc.nextInt();
+		System.out.println("Valor recebe à hora:");
+		double valorHora = sc.nextDouble();
+		
+		double calculoSalarial = (numeroHoras * valorHora);
+		
+		System.out.println("Number:" + numeroFuncionario);
+		System.out.printf("Salary: U$ %.2f", calculoSalarial);
+		
+		sc.close();
+	}
+	static void exercise5() {
+		//
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		sc.close();
 		
 		
 	}
