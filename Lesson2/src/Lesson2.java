@@ -6,8 +6,8 @@ public class Lesson2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.out.println("Hello World");
-		exercise5();
+		System.out.println("Hi, this is Lesson 2");
+		exercise6();
 
 	}
 	static void exercise1() {	
@@ -100,5 +100,39 @@ public class Lesson2 {
 		System.out.printf("VALOR A PAGAR: %.2f%n", subtotal);
 		sc.close();
 	}
-
+	static void exercise6() {
+		/*
+		 * Fazer um programa que leia três valores com ponto flutuante de dupla precisão: A, B e C. Em seguida, calcule e
+		 * mostre:
+		 * a) a área do triângulo retângulo que tem A por base e C por altura.
+		 * b) a área do círculo de raio C. (pi = 3.14159)
+		 * c) a área do trapézio que tem A e B por bases e C por altura.
+		 * d) a área do quadrado que tem lado B.
+		 * e) a área do retângulo que tem lados A e B
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
+	
+		System.out.println("Ponto 1 fultuante:");
+		double valueA = sc.nextDouble();
+		System.out.println("Ponto 2 fultuante:");
+		double valueB = sc.nextDouble();
+		System.out.println("Ponto 3 fultuante:");
+		double valueC = sc.nextDouble();
+		
+		double areaTriangle =  ((valueA * valueC)/2);
+		double areaCicle = (3.14159 * (valueC * valueC));
+		double areaTrapezio = (((valueA + valueB)*valueC)/2);
+		double areaQuadrado = (valueB * valueB);
+		double areaRetangulo = (valueA * valueB);
+		
+		System.out.printf("TRIANGULO: %.4f%n", areaTriangle);
+		System.out.printf("CIRCULO: %.4f%n", areaCicle);
+		System.out.printf("TRAPEZIO: %.4f%n", areaTrapezio);
+		System.out.printf("QUADRADO: %.4f%n", areaQuadrado);
+		System.out.printf("RETANGULO: %.4f%n", areaRetangulo);
+		
+		sc.close();
+	}
 }
