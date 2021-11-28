@@ -6,7 +6,8 @@ public class Lesson2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		exercise4();
+		System.out.println("Hello World");
+		exercise5();
 
 	}
 	static void exercise1() {	
@@ -72,14 +73,32 @@ public class Lesson2 {
 		sc.close();
 	}
 	static void exercise5() {
-		//
+		//Fazer um programa para ler o código de uma peça 1, o número de peças 1, o valor unitário de cada peça 1, o
+		//código de uma peça 2, o número de peças 2 e o valor unitário de cada peça 2. Calcule e mostre o valor a ser pago.
+		
+		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
+		System.out.println("Coloque o Codigo da Peça a registar:");
+		int codigoPeca1 = sc.nextInt();
+		System.out.println("Coloque a quantidade:");
+		int quantidade1 = sc.nextInt();
+		System.out.println("Coloque o valor unitário:");
+		double valor1 = sc.nextDouble();
+		double total1 = quantidade1 * valor1;
 		
+		System.out.println("Coloque o Codigo da Peça a registar:");
+		int codigoPeca2 = sc.nextInt();
+		System.out.println("Coloque a quantidade:");
+		int quantidade2 = sc.nextInt();
+		System.out.println("Coloque o valor unitário:");
+		double valor2 = sc.nextDouble();
+		double total2 = quantidade2 * valor2;
 		
+		double subtotal = total1 + total2;
+		
+		System.out.printf("VALOR A PAGAR: %.2f%n", subtotal);
 		sc.close();
-		
-		
 	}
 
 }
