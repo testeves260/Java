@@ -6,7 +6,29 @@ public class Lesson3 {
 
 	public static void main(String[] args) {
 		
-		exercise5();
+		//condições IF/ELSE/SWITCH/Condições ternárias:
+		int value1 = 50;
+		//Condição ternária
+		double check = (value1 == 40) ? "OLA" : "MARIA";
+		
+		/*
+		 * Switch
+		 
+		switch(value1) {
+		case(10):
+			System.out.println("false");
+			break;
+		case(20):
+			System.out.println("false");
+			break;
+		case(50):
+			System.out.println("true");
+			break;
+		}*/
+		
+		
+		
+		//exercise5();
 	}
 	static void exercise1() {
 		//Insere um numero e verifique se é positivo ou negativo.
@@ -21,6 +43,7 @@ public class Lesson3 {
 		} else {
 			System.out.printf("Número %d é negativo", numero);
 		}
+		sc.close();
 	}
 	static void exercise2() {
 		//Fazer um programa para ler um número inteiro e dizer se este número é par ou ímpar.
@@ -35,6 +58,7 @@ public class Lesson3 {
 		} else {
 			System.out.println("IMPAR");
 		}
+		sc.close();
 	}
 	static void exercise3() {
 		/*Leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem "Sao Multiplos" ou "Nao sao
@@ -56,6 +80,7 @@ public class Lesson3 {
 		} else {
 			System.out.println("Não São Multiplos");
 		}
+		sc.close();
 	}
 	static void exercise4() {
 		/*
@@ -76,6 +101,7 @@ public class Lesson3 {
 			int result = ((24 - startingHour) + endingHour);
 			System.out.printf("A duração do jogo foi de %d", result);
 		}
+		sc.close();
 	}
 	static void exercise5() {
 		/*Você deve fazer um programa que leia um valor qualquer e apresente uma mensagem dizendo em qual dos
@@ -100,5 +126,6 @@ public class Lesson3 {
 		} else if(value < 0 || value > 100) {
 			System.out.println("Fora de intervalo");
 		}
+		sc.close();
 	}
 }
