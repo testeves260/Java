@@ -6,10 +6,10 @@ public class Lesson3 {
 
 	public static void main(String[] args) {
 		
-		//condições IF/ELSE/SWITCH/Condições ternárias:
+		//condiï¿½ï¿½es IF/ELSE/SWITCH/Condiï¿½ï¿½es ternï¿½rias:
 		int value1 = 50;
-		//Condição ternária
-		double check = (value1 == 40) ? "OLA" : "MARIA";
+		//Condiï¿½ï¿½o ternï¿½ria
+		(value1 == 40) ? System.out.println("OLA") : System.out.println("MARIA");
 		
 		/*
 		 * Switch
@@ -31,22 +31,22 @@ public class Lesson3 {
 		//exercise5();
 	}
 	static void exercise1() {
-		//Insere um numero e verifique se é positivo ou negativo.
+		//Insere um numero e verifique se ï¿½ positivo ou negativo.
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Introduza um número inteiro:");
+		System.out.println("Introduza um nï¿½mero inteiro:");
 		int numero = sc.nextInt();
 		
 		if (numero > 0 ) {
-			System.out.printf("Número %d é positivo", numero);
+			System.out.printf("Nï¿½mero %d ï¿½ positivo", numero);
 		} else {
-			System.out.printf("Número %d é negativo", numero);
+			System.out.printf("Nï¿½mero %d ï¿½ negativo", numero);
 		}
 		sc.close();
 	}
 	static void exercise2() {
-		//Fazer um programa para ler um número inteiro e dizer se este número é par ou ímpar.
+		//Fazer um programa para ler um nï¿½mero inteiro e dizer se este nï¿½mero ï¿½ par ou ï¿½mpar.
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -61,8 +61,8 @@ public class Lesson3 {
 		sc.close();
 	}
 	static void exercise3() {
-		/*Leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem "Sao Multiplos" ou "Nao sao
-		 * Multiplos", indicando se os valores lidos são múltiplos entre si. Atenção: os números devem poder ser digitados em
+		/*Leia 2 valores inteiros (A e B). Apï¿½s, o programa deve mostrar uma mensagem "Sao Multiplos" ou "Nao sao
+		 * Multiplos", indicando se os valores lidos sï¿½o mï¿½ltiplos entre si. Atenï¿½ï¿½o: os nï¿½meros devem poder ser digitados em
 		 * ordem crescente ou decrescente.
 		 */
 		
@@ -76,16 +76,16 @@ public class Lesson3 {
 		
 		
 		if(valueA % valueB == 0 || valueB%valueA == 0) {
-			System.out.println("São Multiplos");
+			System.out.println("Sï¿½o Multiplos");
 		} else {
-			System.out.println("Não São Multiplos");
+			System.out.println("Nï¿½o Sï¿½o Multiplos");
 		}
 		sc.close();
 	}
 	static void exercise4() {
 		/*
-		 * Leia a hora inicial e a hora final de um jogo. A seguir calcule a duração do jogo, sabendo que o mesmo pode
-		 * começar em um dia e terminar em outro, tendo uma duração mínima de 1 hora e máxima de 24 horas.
+		 * Leia a hora inicial e a hora final de um jogo. A seguir calcule a duraï¿½ï¿½o do jogo, sabendo que o mesmo pode
+		 * comeï¿½ar em um dia e terminar em outro, tendo uma duraï¿½ï¿½o mï¿½nima de 1 hora e mï¿½xima de 24 horas.
 		 */
 		Scanner sc = new Scanner(System.in);
 		
@@ -96,17 +96,17 @@ public class Lesson3 {
 		
 		if(startingHour < endingHour) {
 			int result = endingHour - startingHour;
-			System.out.printf("A duração do jogo foi de %d", result);
+			System.out.printf("A duraï¿½ï¿½o do jogo foi de %d", result);
 		} else if(startingHour > endingHour) {
 			int result = ((24 - startingHour) + endingHour);
-			System.out.printf("A duração do jogo foi de %d", result);
+			System.out.printf("A duraï¿½ï¿½o do jogo foi de %d", result);
 		}
 		sc.close();
 	}
 	static void exercise5() {
-		/*Você deve fazer um programa que leia um valor qualquer e apresente uma mensagem dizendo em qual dos
-		 * seguintes intervalos ([0,25], (25,50], (50,75], (75,100]) este valor se encontra. Obviamente se o valor não estiver em
-		 * nenhum destes intervalos, deverá ser impressa a mensagem “Fora de intervalo”.
+		/*Vocï¿½ deve fazer um programa que leia um valor qualquer e apresente uma mensagem dizendo em qual dos
+		 * seguintes intervalos ([0,25], (25,50], (50,75], (75,100]) este valor se encontra. Obviamente se o valor nï¿½o estiver em
+		 * nenhum destes intervalos, deverï¿½ ser impressa a mensagem ï¿½Fora de intervaloï¿½.
 		*/
 		
 		Scanner sc = new Scanner(System.in);
