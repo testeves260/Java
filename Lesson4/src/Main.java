@@ -1,5 +1,3 @@
-package entities;
-
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -16,7 +14,7 @@ public class Main {
 		
 		employee e = new employee();
 		
-		e.name = "João Silva";
+		e.name = "Joï¿½o Silva";
 		e.grossSalary = 6000.00;
 		e.tax = 1000.00;
 		
@@ -57,20 +55,31 @@ public class Main {
 	static void exercise3() {
 		
 		Scanner sc = new Scanner(System.in);
-		
-		Student s = new Student();
+		Locale.setDefault(Locale.US);
+		Student s = new Student(); //Criar um novo objecto chamado "s"
 		
 		System.out.println("Insira o nome do estudante:");
-		s.nome = sc.next();
+		s.nome = sc.nextLine();
 		System.out.println("Insira a nota do primeiro trimestre:");
-		s.nota1 = sc.next();
+		s.nota1 = sc.nextInt();
 		System.out.println("Insira a nota do segundo trimestre:");
-		s.nota2 = sc.next();
+		s.nota2 = sc.nextInt();
 		System.out.println("Insira a nota do terceiro trimestre:");
-		s.nota3 = sc.next();
+		s.nota3 = sc.nextInt();
 		
-		s.finalGrade();
+		
+		if (s.missingPoints() != 0){
+			System.out.printf("FINAL GRADE = %d%n", s.finalGrade());
+			System.out.println("FAILED");
+			System.out.printf("MISSING %d POINTS %n", s.missingPoints());
+		}
+		else {
+			System.out.printf("FINAL GRADE = %d%n", s.finalGrade());
+			System.out.println("PASS");
+		}
 		
 		sc.close();
 	}
+	
 }
+

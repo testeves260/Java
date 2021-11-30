@@ -9,7 +9,7 @@ public class Lesson3 {
 		//condi��es IF/ELSE/SWITCH/Condi��es tern�rias:
 		int value1 = 50;
 		//Condi��o tern�ria
-		(value1 == 40) ? System.out.println("OLA") : System.out.println("MARIA");
+		//(value1 == 40) ? System.out.println("OLA") : System.out.println("MARIA");
 		
 		/*
 		 * Switch

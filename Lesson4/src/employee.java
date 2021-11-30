@@ -1,5 +1,3 @@
-package entities;
-
 public class employee {
 	
 	String name;
