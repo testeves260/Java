@@ -22,6 +22,7 @@ public class Lesson2 {
 		
 		sc.close();
 	}
+	
 	static void exercise2() {
 		//Devolve o resultado do calcula da área.
 		Locale.setDefault(Locale.US); 
