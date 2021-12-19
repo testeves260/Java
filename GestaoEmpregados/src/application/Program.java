@@ -9,59 +9,60 @@ import entities.Empregados;
 
 public class Program {
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		Locale.setDefault(Locale.US);
-		
-		List <Empregados> myList = new ArrayList<>();
-		
-		System.out.println("Registar quantos empregados?");
-		int employeesQty = sc.nextInt();
-		
-		for ( int i = 1; i < employeesQty+1; i++) {
-			System.out.println("Empregado #" + i);
-			
-			System.out.println("ID: ");
-			Integer employerID = sc.nextInt();
-			System.out.println("Nome: ");
-			String employerName = sc.next();
-			System.out.println("Salário: ");
-			double employerSalary = sc.nextDouble();
+    public static void main(String[] args) {
 
-			
-			myList.add(new Empregados(employerID, employerName, employerSalary));
-		}
+        //Set scanner and locale
+        Scanner sc = new Scanner(System.in);
+        Locale.setDefault(Locale.US);
 
-		
-		System.out.println("Insira o ID de funcionário: ");
-		int IncreaseSalaryToId = sc.nextInt();
-		
-		Integer pos = getPos(myList, IncreaseSalaryToId);
-		if (pos == null) {
-			System.out.println("Este ID não existe");
-			
-		} else {
-			System.out.println("Qual a %% de aumento: ");
-			double percentage = sc.nextDouble();
+        //Create main list to receive objects
+        ArrayList <Empregados> myList = new ArrayList<Empregados>();
 
-			myList.get(pos).increaseSalary(percentage);
-			System.out.println("O salário foi aumentado para " + myList.get(pos).getSalary());
-		}
+        System.out.println("Register how many employees?");
+        int answer = sc.nextInt();
 
-		System.out.println("Lista de empregados:");
-		for(Empregados empregado: myList) {
-			System.out.println(empregado.getId() + ", " + empregado.getName() + ", " + empregado.getSalary());	
-		}
-	}
-	
-	public static Integer getPos(List<Empregados> list, int id) {
-		
-		for(int i = 0; i < list.size(); i++) {
-			
-			if(list.get(i).getId() == id) {
-				return i;
-			}
-		}
-		return null;
-	}
+        for(int i = 0; i < answer; i++){
+            System.out.println("Set Employee ID:");
+            int id = sc.nextInt();
+            System.out.println("Set Employee Name:");
+            String name = sc.next();
+            System.out.println("Set Employee Salary:");
+            double salary = sc.nextDouble();
+
+            myList.add(new Empregados(name, id, salary));
+        }
+
+        for(int i = 0; i < myList.size(); i++){
+            System.out.println("Employee #" + (i+1));
+            System.out.println("ID: " + myList.get(i).getID());
+            System.out.println("Name: " + myList.get(i).getName());
+            System.out.println("Salary: " + myList.get(i).getSalary());
+        }
+
+        System.out.println("Enter the employee id that will have salary increase: ");
+        int idToIncrease = sc.nextInt();
+        Integer pos = doesIdExists(myList, idToIncrease);
+
+        if(pos == null){
+            System.out.println("ID does not exist");
+        } else {
+            System.out.println("Enter the percentage: ");
+            double percentage = sc.nextDouble();
+            myList.get(pos).setSalaryRaise(percentage);
+        }
+        System.out.println("List of Employees: ");
+        for(int i = 0; i < myList.size(); i++){
+            System.out.println(myList.get(i).getID() + ": " + myList.get(i).getName() + ", " + myList.get(i).getSalary());
+        }
+
+    }
+    //Check if ID exists with a external function.
+    public static Integer doesIdExists(List<Empregados> list, int id){
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i).getID() == id){
+                return i;
+            }
+        }
+        return null;
+    }
 }

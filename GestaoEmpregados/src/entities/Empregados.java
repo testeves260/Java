@@ -1,48 +1,43 @@
 package entities;
 
 public class Empregados {
-	
-	private int id;
-	private String name;
-	private double salary;
-	
-	public Empregados(int id, String name, double salary) {
-	
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
-	
-	}
 
-	public int getId() {
-		return id;
-	}
+    private String name;
+    private int id;
+    private double salary;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public Empregados(String name, int id, double salary){
 
-	public String getName() {
-		return name;
-	}
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public int getID(){
+        return this.id;
+    }
 
-	public double getSalary() {
-		return salary;
-	}
+    public void setID(int id){
+        this.id = id;
+    }
 
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
-	
-	public double increaseSalary(double percentage) {
-		this.salary = this.salary + (this.salary * (percentage/100));
-		
-		return this.salary;
-	}
-	
+    public double getSalary(){
+        return this.salary;
+    }
 
+    public void setSalary(double salary){
+        this.salary = salary;
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setSalaryRaise(double percentage){
+        this.salary = this.salary + (this.salary * (percentage/100));
+    }
 }
