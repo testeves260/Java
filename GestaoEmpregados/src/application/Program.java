@@ -15,10 +15,6 @@ public class Program {
 		
 		List <Empregados> myList = new ArrayList<>();
 		
-		int employerID = 0;
-		String employerName = "";
-		double employerSalary = 0.0;
-		
 		System.out.println("Registar quantos empregados?");
 		int employeesQty = sc.nextInt();
 		
@@ -26,11 +22,11 @@ public class Program {
 			System.out.println("Empregado #" + i);
 			
 			System.out.println("ID: ");
-			employerID = sc.nextInt();
+			Integer employerID = sc.nextInt();
 			System.out.println("Nome: ");
-			employerName = sc.next();
+			String employerName = sc.next();
 			System.out.println("Salário: ");
-			employerSalary = sc.nextDouble();
+			double employerSalary = sc.nextDouble();
 
 			
 			myList.add(new Empregados(employerID, employerName, employerSalary));
@@ -39,22 +35,33 @@ public class Program {
 		
 		System.out.println("Insira o ID de funcionário: ");
 		int IncreaseSalaryToId = sc.nextInt();
-		System.out.println("Qual a %% de aumento: ");
-		double percentage = sc.nextDouble();
 		
-		
-		for(Empregados empregado : myList) {
-			if (empregado.getId() == IncreaseSalaryToId) {
-				empregado.increaseSalary(percentage);
-				System.out.println("O salário do/a colaborador/a " + empregado.getName() + " foi aumentado para " + empregado.getSalary() + "€");
-			} else {
-				System.out.println("O ID que mencionou não existe.");
-			}
+		Integer pos = getPos(myList, IncreaseSalaryToId);
+		if (pos == null) {
+			System.out.println("Este ID não existe");
+			
+		} else {
+			System.out.println("Qual a %% de aumento: ");
+			double percentage = sc.nextDouble();
+
+			myList.get(pos).increaseSalary(percentage);
+			System.out.println("O salário foi aumentado para " + myList.get(pos).getSalary());
 		}
-		
+
 		System.out.println("Lista de empregados:");
 		for(Empregados empregado: myList) {
 			System.out.println(empregado.getId() + ", " + empregado.getName() + ", " + empregado.getSalary());	
 		}
+	}
+	
+	public static Integer getPos(List<Empregados> list, int id) {
+		
+		for(int i = 0; i < list.size(); i++) {
+			
+			if(list.get(i).getId() == id) {
+				return i;
+			}
+		}
+		return null;
 	}
 }
