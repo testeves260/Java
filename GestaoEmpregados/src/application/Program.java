@@ -13,45 +13,48 @@ public class Program {
 		Scanner sc = new Scanner(System.in);
 		Locale.setDefault(Locale.US);
 		
-		List <Object> myList = new ArrayList<Object>();
+		List <Empregados> myList = new ArrayList<>();
 		
 		int employerID = 0;
 		String employerName = "";
 		double employerSalary = 0.0;
 		
-		Empregados employee = new Empregados(employerID, employerName, employerSalary);
-		
-		
-		System.out.println("How many employees will be registered?");
+		System.out.println("Registar quantos empregados?");
 		int employeesQty = sc.nextInt();
 		
 		for ( int i = 1; i < employeesQty+1; i++) {
-			System.out.println("Employee #" + i);
+			System.out.println("Empregado #" + i);
 			
 			System.out.println("ID: ");
 			employerID = sc.nextInt();
-			System.out.println("Name: ");
+			System.out.println("Nome: ");
 			employerName = sc.next();
-			System.out.println("Salary: ");
+			System.out.println("Salário: ");
 			employerSalary = sc.nextDouble();
-			
-			myList.add(employee);
-		}	
-		
-		System.out.println("Enter the employee id that will have salary increase: ");
-		int idToIncrease = sc.nextInt();
-		
-		System.out.println("Enter the percentage: ");
-		double percentage = sc.nextDouble();	
-		
-		for(int i = 0; i < myList.size(); i++) {
 
-			if(myList)
-			}		
+			
+			myList.add(new Empregados(employerID, employerName, employerSalary));
 		}
-		System.out.println("List of employees:");
-		for(int i = 0; i < myList.size(); i++) {
-			System.out.println(employee.getId() + ", " + employee.getName() + ", " + employee.getSalary());
+
+		
+		System.out.println("Insira o ID de funcionário: ");
+		int IncreaseSalaryToId = sc.nextInt();
+		System.out.println("Qual a %% de aumento: ");
+		double percentage = sc.nextDouble();
+		
+		
+		for(Empregados empregado : myList) {
+			if (empregado.getId() == IncreaseSalaryToId) {
+				empregado.increaseSalary(percentage);
+				System.out.println("O salário do/a colaborador/a " + empregado.getName() + " foi aumentado para " + empregado.getSalary() + "€");
+			} else {
+				System.out.println("O ID que mencionou não existe.");
+			}
+		}
+		
+		System.out.println("Lista de empregados:");
+		for(Empregados empregado: myList) {
+			System.out.println(empregado.getId() + ", " + empregado.getName() + ", " + empregado.getSalary());	
 		}
 	}
 }
