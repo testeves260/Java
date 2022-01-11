@@ -31,7 +31,7 @@ public class Program {
 			if(outsourced.charAt(0) == 'y') {
 				System.out.println("Additional Charge:");
 				Double additionalCharge = sc.nextDouble();
-				Double outsourceBonus = (110/100)*additionalCharge+additionalCharge;
+				Double outsourceBonus = (additionalCharge * 1.1);
 				
 				Employee employee = new OutsorceEmployee(name, hours, value, outsourceBonus);
 				employeeList.add(employee);
@@ -49,6 +49,7 @@ public class Program {
 		System.out.println("Payments:");
 		for(int j = 0; j < employeeList.size(); j++) {
 			System.out.println(employeeList.get(j).toString(employeeList.get(j)));
-		}	
+		}
+		sc.close();
 	}
 }
