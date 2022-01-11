@@ -28,7 +28,7 @@ public class Lesson3 {
 		
 		
 		
-		//exercise5();
+		exercise5();
 	}
 	static void exercise1() {
 		//Insere um numero e verifique se � positivo ou negativo.
