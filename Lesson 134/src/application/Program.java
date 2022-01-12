@@ -41,10 +41,17 @@ public class Program {
 			}
 		}
 		
-		System.out.println("TAXES PAID:");
+		System.out.println("\nTAXES PAID:");
 		for (Pessoa p : listPessoas) {
-			System.out.printf(p.getName() + " - " + p.totalTaxes() + "€.");
+			System.out.println(p.getName() + " - " + p.totalTaxes() + "€.");
 		}
+		
+		Double sum = 0.00;
+		for (Pessoa p : listPessoas) {
+			sum += p.getTax();
+		}
+		
+		System.out.println("\nTOTAL TAXES: " + sum + "€");
 		
 		sc.close();
 	}
