@@ -16,7 +16,7 @@ public class Program {
     public static void main(String [] args) throws ParseException {
 
         Scanner sc = new Scanner(System.in);
-        List productList = new ArrayList<>();
+        List <Product> productList = new ArrayList<>();
 
         System.out.println("Enter the number of products: ");
         int productQty = sc.nextInt();
@@ -51,8 +51,8 @@ public class Program {
         }
 
         System.out.println("PRICE TAGS:");
-        for(int i = 0; i < productList.size(); i++) {
-            System.out.println(productList.get(i).toString());
+        for(Product product : productList) {
+            System.out.println(product.toString());
         }
         
         sc.close();
