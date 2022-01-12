@@ -15,7 +15,7 @@ public class ImportedProduct extends Product {
 
     @Override
     public String toString(){
-        return totalPrice() + " (Customs fee: $" + customsFee + ")";
+        return name + " - " + totalPrice() + "€ (Customs fee: " + customsFee + "€)";
     }
 
 }

@@ -22,7 +22,7 @@ public class Program {
         int productQty = sc.nextInt();
 
         for(int i = 0; i < productQty; i++) {
-            System.out.println("Product #" + i + " data:");
+            System.out.println("Product #" + (i+1) + " data:");
             System.out.println("Common, Used or Imported (c/u/i)?");
             char productType = sc.next().charAt(0);
 
