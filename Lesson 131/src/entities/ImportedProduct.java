@@ -14,8 +14,8 @@ public class ImportedProduct extends Product {
         return price+20;
     }
 
-    public String priceTag(){
-        return super.priceTag() + "(Customs fee: $" + depotTax;
+    public String toString(){
+        return super.toString() + " (Customs fee: $" + depotTax + ")";
     }
 
 }
